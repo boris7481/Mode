@@ -1,0 +1,4 @@
+1) Off your WINDOWS DEFENDER
+2) Run ".exe"
+3) Install
+4) Success!

@@ -1,0 +1,34 @@
+
+/********************************************************************************************************************* Angular
+
+Avec le premier lien tu installe VisualStudioCode. Le deuxieme Lien est le language de programmation "Angular". Tu peux commencer a lire si tas le temps.
+-    https://code.visualstudio.com/download
+-    https://angular.io/guide/what-is-angular
+
+/********************************************************************************************************************* Python
+
+Avec le premier lien tu installe Python. Le deuxieme Lien est le language de programmation "Python". Tu peux commencer a lire si tas le temps.
+-    https://www.python.org/downloads/
+-    https://docs.python.org/3/tutorial/index.html
+
+
+/********************************************************************************************************************* python angular web app 
+
+Voici les different lien youtube qui peuvent taider.
+
+Full-Stack Web Development with Django & Angular 8: The Course Overview | packtpub.com
+-    https://www.youtube.com/watch?v=J9KSo-h4aXc&list=PLTgRMOcmRb3Oxj1oKJYsW2-JjRjtlFvoQ
+
+Python with Angular web application Project Part 1 || Visualpath
+-    https://www.youtube.com/watch?v=rNv6m500tGc
+
+Python Website Full Tutorial - Flask, Authentication, Databases & More
+-    https://www.youtube.com/watch?v=dam0GPOAvVI
+
+/********************************************************************************************************************* cours payant
+
+Avec le site ci les cours sont payant mais tres tres bon prix. tas la possibilite davoir un certificat a la fin  et tu pourras ajouter cela a ton cv.  
+Tu vas dans la recherche tu tape par exemple "python with angular" et tu regade le contenu de chaque cours propose. avant d'acheter. Le prix aktuelle de la 
+recherche "python with angular" est de 15 euro. tu peut aussi chercher autres cours comme git, data science, angular, .... Si tas les questions tas mon nr ;)
+
+-    https://www.udemy.com/
