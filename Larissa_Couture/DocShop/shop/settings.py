@@ -129,3 +129,4 @@ AUTH_USER_MODEL = "accounts.Shopper"
 # qund tu passe par ce ci il te propose de donner un nom d 'utilisateur alors que tu veut toi meme
 # quand tu passe autrement comme au debut de la viseo il de propose un nom de user par defaut
 # qui correspond au nom d'utlisateur de ton ordinateur
+Test = True
