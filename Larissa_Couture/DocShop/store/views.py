@@ -12,4 +12,3 @@ def product_detail(request, slug):
     product = get_object_or_404(Product, slug= slug)
     return render(request, "store/detail.html", context = {"product" : product})
 
-test = True
