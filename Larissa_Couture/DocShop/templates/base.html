@@ -10,7 +10,10 @@
   <h2> La boutique de couture </h2> <!-- ce lien sera cliquable grace au nom de  l'url -->
 </a>
 
-{% if not user.is_authenticated %}
+{% if user.is_authenticated %}
+    {{ user.username }}
+<a href="{% url 'logout' %}">Deconnection</a>
+{% else %}
     <a href="{% url 'signup' %}">S'inscrie</a>
 {% endif %}
 
