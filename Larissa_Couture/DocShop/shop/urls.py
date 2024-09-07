@@ -18,13 +18,15 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path
 from store.views import index, product_detail
-
+from accounts.views import signup
 from shop import settings
 
 urlpatterns = [
-    path('', index, name = 'index'),
-    path('admin/', admin.site.urls),
-    path('product/<str:slug>', product_detail, name = "product"),
-] + static( settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
+                  path('', index, name='index'),
+                  path('admin/', admin.site.urls),
+                  path('signup/', signup, name='signup'),
+                  path('product/<str:slug>', product_detail, name="product"),
+              ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
 # cette ligne de concatenation permet de gerer tous nos fichiers statique dans un seul dossier Media
 # si tu ouvrte l'image dans un new Tab tu verras l"url Media

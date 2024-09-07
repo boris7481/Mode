@@ -117,7 +117,7 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-MEDIA_URL = "/media/"  # pour que l Url de limange dans le navigateur
+MEDIA_URL = "/media/"  # pour  l'Url de limange dans le navigateur
 
 MEDIA_ROOT = BASE_DIR / "media"  # le Dossier ou les images seront sauvegarder
 # on deplace le dossier product dans un dossier media pour y ranger tous les fichiers statique
@@ -125,7 +125,7 @@ MEDIA_ROOT = BASE_DIR / "media"  # le Dossier ou les images seront sauvegarder
 
 AUTH_USER_MODEL = "accounts.Shopper"
 # la lignbe ci dessus est  pour gerer les users de maniere personalise avec django
-# nom de l'appli + point + nom de la calsse
+# nom de l'appli + point + nom de la classe
 # qund tu passe par ce ci il te propose de donner un nom d 'utilisateur alors que tu veut toi meme
 # quand tu passe autrement comme au debut de la viseo il de propose un nom de user par defaut
 # qui correspond au nom d'utlisateur de ton ordinateur

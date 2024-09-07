@@ -5,14 +5,19 @@
     <title>La boutique de Couture </title>
 </head>
 <body>
-<!-- ce fichier est la base de tous les fichier Html du projet  est creer dans le projet lui meme -->
 
 <a href="{% url 'index' %}">
   <h2> La boutique de couture </h2> <!-- ce lien sera cliquable grace au nom de  l'url -->
 </a>
+
+{% if not user.is_authenticated %}
+    <a href="{% url 'signup' %}">S'inscrie</a>
+{% endif %}
 
 {% block content %}
 {% endblock %}
 
 </body>
 </html>
+
+<!-- ce fichier base te permet de relier les autres vue graces a leurs urls  -->
