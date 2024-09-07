@@ -1,4 +1,5 @@
-from django.shortcuts import render, redirectfrom django.contrib.auth import get_user_model, login
+from django.shortcuts import render, redirect
+from django.contrib.auth import get_user_model, login
 
 # cette fonction get_user_model nous permet de recuprer un object qui correspond a notre model d 'utilisateur
 
