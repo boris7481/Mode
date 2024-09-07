@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from django.contrib.auth import get_user_model, login, logout
+from django.contrib.auth import get_user_model, login, logout, authenticate
 
 # cette fonction get_user_model nous permet de recuprer un object qui correspond a notre model d 'utilisateur
 
@@ -15,11 +15,27 @@ def signup(request):
                                         password=password)
         login(request, user)
         return redirect("index")
-# la fonction login permet de leir la requette au user creer
+    # la fonction login permet de leir la requette au user creer
     return render(request, 'accounts/signup.html')
 
     # request.POST est un dictionaire donct les clefs username et password defini dans le fichier signu.html
     # La fonction login te permet de connecter L#utlisateur
+
+
+def login_user(request):
+    if request.method == "POST":
+        # Connecter l'utilisateur
+        username = request.POST.get("username")
+        password = request.POST.get("password")
+
+        user = authenticate(username=username, password=password)
+        if user:
+            login(request, user)
+            return redirect('index')
+
+    return render(request, 'accounts/login.html')
+
+
 def logout_user(request):
     logout(request)
     return redirect('index')
