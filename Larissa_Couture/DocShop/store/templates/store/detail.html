@@ -8,5 +8,8 @@
     <p> {{ product.description }} </p>
     <p> {{ product.stock }} en stock  </p>
 
+{% if user.is_authenticated %}
+    <p><a href="{% url 'add_to_cart' product.slug  %}">ajouter dans le panier </a></p>
+{% endif %}
 
 {% endblock %}
