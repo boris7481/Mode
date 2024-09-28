@@ -15,11 +15,11 @@ def signup(request):
                                         password=password)
         login(request, user)
         return redirect("index")
-    # la fonction login permet de leir la requette au user creer
+    # la fonction login permet de lioer la requette au user creer
     return render(request, 'accounts/signup.html')
 
-    # request.POST est un dictionaire donct les clefs username et password defini dans le fichier signu.html
-    # La fonction login te permet de connecter L#utlisateur
+    # request.POST est un dictionaire dont les clefs username et password defini dans le fichier signu.html
+    # La fonction login te permet de connecter L#l'utilisateur
 
 
 def login_user(request):

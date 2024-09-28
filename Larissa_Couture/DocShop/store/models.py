@@ -1,5 +1,6 @@
 from django.db import models
 from django.urls import reverse
+from django.utils import timezone
 
 from shop.settings import AUTH_USER_MODEL
 
@@ -55,7 +56,16 @@ class Cart(models.Model):
     user = models.OneToOneField(AUTH_USER_MODEL, on_delete=models.CASCADE)
     orders = models.ManyToManyField(Order)
 
-
-
     def __str__(self):
         return self.user.username
+
+    def delete(self, *args, **kwargs):
+        # on surchage la methode delete pour pouvoir supprimer un panier a partir du system d amin
+        for order in self.orders.all():  # on boucle sur tous les articles attachees au panier
+            order.ordered = True
+            order.ordered_date = timezone.now()
+            order.save()  # on sauvegarde le model
+
+        self.orders.clear()  # permet de detacher les elements permet de casser la relation entre article et panier
+        # du ManyToManyField. Les articles ne seront plus lies a notre panier
+        super().delete(*args, **kwargs)

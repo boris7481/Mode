@@ -15,7 +15,7 @@ def product_detail(request, slug):
     return render(request, "store/detail.html", context={"product": product})
 
 
-# tous le code qui de la vue add_to_cart ci dessous te permet de gerer de manier plus efficasse le panier
+# tous le code  de la vue add_to_cart ci dessous te permet de gerer de maniere plus efficasse le panier
 # gestion du user selon qu'il a deja un panier ou pas
 # si le user a deja un article dans le panier on increment l'article de 1
 def add_to_cart(request, slug):
@@ -23,6 +23,7 @@ def add_to_cart(request, slug):
     product = get_object_or_404(Product, slug=slug)  # recuperation du produit et du slug passe au niveau de L 'URL
     cart, _ = Cart.objects.get_or_create(user=user)
     order, created = Order.objects.get_or_create(user=user,
+                                                 ordered = False, # nous permet de cibler le bonne element
                                                  product=product)
 
     if created:
@@ -44,7 +45,6 @@ def cart(request):
 def delete_cart(request):
     cart = request.user.cart
     if cart:
-        cart.orders.all().delete()
         cart.delete()
 
     return redirect("index")
