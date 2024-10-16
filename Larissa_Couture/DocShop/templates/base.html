@@ -1,18 +1,18 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <title>La boutique de Couture </title>
+    <link rel="stylesheet"  href="{% static 'css/style.css' %}">
 </head>
 <body>
 
 
-
 <nav>
-
-    <a href="{%  url 'posts:home' %}"> Accueil </a>
+    <a href="{%  url 'posts:home' %}"> Accueil du blog </a>
     {%  if request.user.is_authenticated  %}
-    <a href="{%  url 'posts:create' %}"> Ajouter un articlede blog  </a>
+    <a href="{%  url 'posts:create' %}"> Ajouter un article de blog  </a>
     {%  endif %}
 </nav>
 
@@ -23,27 +23,24 @@
 
 {% if user.is_authenticated %}
     {{ user.username }}
-<a href="{% url 'logout' %}">Deconnection</a>
+<a href="{% url 'logout' %}">Deconnection</a> <!-- une balise url pour logout -->
 {% else %}
-    <a href="{% url 'login' %}">Connection</a>
-    <a href="{% url 'signup' %}">S'inscrie</a>
+    <a href="{% url 'login' %}">Connection</a> <!-- une balise url pour login -->
+    <a href="{% url 'signup' %}">S'inscrie</a> <!-- une balise url pour signup -->
 {% endif %}
 
-{% if user.cart %}
+{% if user.cart %} <!-- Si le user a un panier -->
 <p>
     <a href="{% url 'cart' %}">Voir le panier({{ user.cart.orders.count }})</a>
 </p>
 {% endif %}
 
 
-
-
-
-{% block content %}
-
-{% endblock %}
+<section id="blog">
+    {% block content %}  <!-- content est le nom de la balise et block est le type de la balsise -->
+    {% endblock %}  <!-- donc ici on peut dire qu'on a une balise content de type block -->
+</section>
 
 </body>
 </html>
-
 <!-- ce fichier base te permet de relier les autres vue graces a leurs urls  -->

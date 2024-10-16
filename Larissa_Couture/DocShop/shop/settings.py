@@ -14,6 +14,8 @@ from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+# cette Variable BASE_DIR represente le dossier source de notre Apllication complete
+# Dans notre BASE_DIR represente le dossier DocShop
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
@@ -34,13 +36,14 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'livereload',
     'django.contrib.staticfiles',
     'store',
     'accounts',
     'posts',
 ]
 
-MIDDLEWARE = [
+MIDDLEWARE = [  # d'le middelware est quelque chose entre la requette et la reponse
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -48,6 +51,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'livereload.middleware.LiveReloadScript',  # j ai ajoute celui ici
 ]
 
 ROOT_URLCONF = 'shop.urls'
@@ -56,7 +60,8 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [BASE_DIR / 'templates'],
-        'APP_DIRS': True,
+        'APP_DIRS': True,   # ce ci veut dire que tous les dossiers applles templates creer dans les
+                            # applications django (store, accounts, posts) seront detectes automatiquement
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',

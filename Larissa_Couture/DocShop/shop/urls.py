@@ -17,7 +17,7 @@ Including another URLconf
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
-from store.views import index, product_detail, add_to_cart, cart,delete_cart
+from store.views import index, product_detail, add_to_cart, cart, delete_cart
 from accounts.views import signup, logout_user, login_user
 from shop import settings
 
@@ -31,7 +31,9 @@ urlpatterns = [
                   path('cart/', cart, name='cart'),
                   path('cart/selete', delete_cart, name='delete_cart'),
                   path('product/<str:slug>', product_detail, name="product"),
+                  # en fait le slug est ajouter pour mieux decrire le produit au niveau de la barre de navigation
                   path('product/<str:slug>/add-to-cart/', add_to_cart, name="add_to_cart"),
+                  # on ajoute la vu add-to-cart ici car on part de la vue de detail por voir le panier
               ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 # cette ligne de concatenation permet de gerer tous nos fichiers statique dans un seul dossier Media

@@ -7,7 +7,8 @@
     <img src="{{ product.thumbnail.url }}" alt="{{ product.name }}" style= " max-width: 250px;" >
     <p> {{ product.description }} </p>
     <p> {{ product.stock }} en stock  </p>
-
+<!-- je peut effacer la ligne ci qui se trouvais dasn le code original <p> {{ product.stock }} en stock  </p> -->
+<!--je peut effacer n'importe quelle ligne ici et laisser juste ce que je afficher au niveau de la vue de detail -->
 {% if user.is_authenticated %}
     <p><a href="{% url 'add_to_cart' product.slug  %}">ajouter dans le panier </a></p>
 {% endif %}
